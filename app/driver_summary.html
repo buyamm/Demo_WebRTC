@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Summary</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/driver_summary.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="summary-tab" data-bs-toggle="tab" href="#summary" role="tab">Driver
+                    Summary</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="problem-tab" data-bs-toggle="tab" href="#problem" role="tab">Problem areas</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="reconstruction-tab" data-bs-toggle="tab" href="#reconstruction" role="tab">3D
+                    reconstruction</a>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content mt-4" id="myTabContent">
+            <!-- Driver Summary -->
+            <div class="tab-pane fade show active" id="summary" role="tabpanel">
+                <div class="row text-center my-4">
+                    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+                        <div class="circle-box">B<br>grade</div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+                        <div class="circle-box">78%<br>efficient</div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+                        <div class="circle-box">56%<br>focused</div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+                        <div class="circle-box">$5 saved<br>in diesel cost</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p>You performed better than 50% of users.</p>
+                    <p>You saved X tons of carbon emissions.</p>
+                    <p><strong>Areas for improvement:</strong></p>
+                    <ul>
+                        <li>Taking turns more smoothly.</li>
+                        <li>Avoiding obstacles.</li>
+                        <li>Driving less erratically.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Problem Areas -->
+            <div class="tab-pane fade" id="problem" role="tabpanel">
+                <div class="d-flex justify-content-center">
+                    <div class="fs-7">
+                        <p>6 mole hills detected</p>
+                        <p>Recommend bringing in pest control</p>
+                    </div>
+                    <div>
+                        <img src="/images/satellite_image.jpg" alt="Problem areas" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Reconstruction -->
+            <div class="tab-pane fade" id="reconstruction" role="tabpanel">
+                <div class="text-center">
+                    <img src="/images/ggmaps_image.jpg" alt="3D Reconstruction" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script defer src="/js/bootstrap.bundle.min.js"></script>
+
+</html>

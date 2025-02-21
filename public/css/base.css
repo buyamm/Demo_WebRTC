@@ -1,0 +1,21 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+p{
+  /* 1rem = 10px */
+    font-size: 1.6rem;
+}
+
+

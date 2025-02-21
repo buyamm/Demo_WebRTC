@@ -1,0 +1,26 @@
+.nav-tabs .nav-link.active {
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.8rem;
+}
+
+.circle-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.info-box {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.6rem;
+}

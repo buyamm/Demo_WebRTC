@@ -1,0 +1,67 @@
+.video-stream {
+  background-color: #ddd;
+  font-size: 1.8rem;
+  border: 1px solid #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-box {
+  background-color: #eee;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mute-btn .fa-microphone-slash {
+  color: red; /* Mute icon color */
+}
+
+#video-btn .fa-video-slash {
+  color: #888; /* Video off icon color */
+}
+
+#localVideo,
+#remoteVideo {
+  width: 100%;
+  height: 100%;
+}
+.video-stream {
+  position: relative;
+}
+
+.video-stream div {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.video-stream button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.video-stream button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.video-stream button img {
+  width: 32px;
+  height: 32px;
+}

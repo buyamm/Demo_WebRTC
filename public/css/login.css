@@ -1,0 +1,52 @@
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.login-container {
+  max-width: 80%;
+  width: 100%;
+}
+
+.email-input {
+  background-color: #ccc;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+  margin: 0 2rem;
+  font-size: 1.5rem;
+}
+
+.text-inform,
+.form-label {
+  font-size: 2vw;
+}
+
+.loading-container, .error-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.btn-login{
+    font-size: 1.5rem;
+}
+
+/* Media Queries  */
+@media (max-width: 768px) {
+  .text-inform,
+  .form-label {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-inform,
+  .form-label {
+    font-size: 4vw;
+  }
+}
