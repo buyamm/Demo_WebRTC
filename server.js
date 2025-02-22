@@ -62,7 +62,7 @@ io.on("connection", (socket) => {
     const [from, to] = caller;
     io.to(allUsers[from].id).emit("call-ended", caller);
     io.to(allUsers[to].id).emit("call-ended", caller);
-    delete allUsers[from];
+    // delete allUsers[from];
   });
 
   socket.on("mute", ({ username, isMuted }) => {});

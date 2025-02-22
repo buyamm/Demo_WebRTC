@@ -1,4 +1,3 @@
-const callBtn = document.getElementById("call-btn");
 const endCallBtn = document.getElementById("end-call-btn");
 const muteBtn = document.getElementById("mute-btn");
 const videoBtn = document.getElementById("video-btn");
@@ -65,6 +64,13 @@ const PeerConnection = (function () {
     return peerConnection;
   };
 
+  const clearInstance = () => {
+    if (peerConnection) {
+      peerConnection.close();
+      peerConnection = null;
+    }
+  };
+
   return {
     // getInstance: Khi phương thức này được gọi, nó sẽ kiểm tra xem đã có instance nào được tạo chưa.
     // Nếu chưa, nó sẽ gọi createInstance để tạo ra một instance mới và lưu vào instance.
@@ -75,6 +81,7 @@ const PeerConnection = (function () {
       }
       return peerConnection;
     },
+    clearInstance,
   };
 })();
 
@@ -172,7 +179,10 @@ socket.on("answer", async ({ from, to, answer }) => {
   const pc = PeerConnection.getInstance();
   await pc.setRemoteDescription(answer);
 
-  endCallBtn.style.display = "block";
+  const callBtnContainer = document.querySelector(".button-container");
+  endCallBtn.style.setProperty("display", "block", "important");
+  callBtnContainer.style.display = "none";
+
   socket.emit("end-call-btn", { from, to });
   caller = [from, to];
 });
@@ -184,6 +194,9 @@ socket.on("end-call-btn", ({ from, to }) => {
 socket.on("icecandidate", async (candidate) => {
   const pc = PeerConnection.getInstance();
   await pc.addIceCandidate(new RTCIceCandidate(candidate));
+  const callBtnContainer = document.querySelector(".button-container");
+  endCallBtn.style.setProperty("display", "block", "important");
+  callBtnContainer.style.display = "none";
 });
 
 socket.on("call-ended", (caller) => {
@@ -196,8 +209,10 @@ socket.on("userDisconnected", (username) => {});
 const endCall = () => {
   const pc = PeerConnection.getInstance();
   if (pc) {
-    pc.close();
+    PeerConnection.clearInstance();
     endCallBtn.style.display = "none";
+    const callBtnContainer = document.querySelector(".button-container");
+    callBtnContainer.style.display = "block";
   }
 };
 
