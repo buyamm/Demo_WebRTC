@@ -18,29 +18,38 @@
     <div class="container-fluid vh-100 d-flex flex-column">
         <div class="row flex-grow-1">
             <div class="col-md-8 video-stream video-stream-local">
-                <video id="localVideo" autoplay playsinline></video>
-                <div>
+                <video id="localVideo" autoplay muted playsinline></video>
+                <div class="icon-interaction">
                     <button id="mute-btn">
-                        <i class="fas fa-microphone"></i> <!-- Icon Mute -->
+                        <i class="fas fa-microphone"></i>
                     </button>
                     <button id="video-btn">
-                        <i class="fas fa-video"></i> <!-- Icon Video -->
+                        <i class="fas fa-video"></i>
                     </button>
 
                     <button id="end-call-btn" class="d-none">
                         <img src="/images/phone-disconnect.png" alt="">
                     </button>
                 </div>
+
             </div>
 
             <div class="col-md-4 d-flex flex-column">
                 <div class="flex-grow-1 video-stream mb-2" id="video-stream-remote">
-                    <video id="remoteVideo" autoplay muted playsinline></video>
+                    <!-- <video id="remoteVideo" autoplay muted playsinline></video> -->
                     <!-- <div>
                         <button id="call-btn" onclick="startCall()">
                             <img src="/images/phone.png" alt="">
                         </button>
                     </div> -->
+                    <div style="height: 100%;" id="dmotion">
+                        <video id="remoteVideo" autoplay width="300" height="200"></video>
+                        <canvas id="canvas-source" width="300" height="200"></canvas>
+                        <canvas id="canvas-blended" width="300" height="200"></canvas>
+                        <div id="hotSpots">
+                            <div id="target"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex-grow-1 info-box">Satellite map with GPS based annotations</div>
             </div>
@@ -55,5 +64,6 @@
     </div>
 </body>
 <script defer src="/js/remoteScreen.js"></script>
+<script defer src="/js/detect_motion.js"></script>
 
 </html>

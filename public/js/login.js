@@ -2,14 +2,15 @@ const loginForm = document.getElementById("login-form");
 const loadingContainer = document.getElementById("loading-container");
 const emailInput = document.getElementById("email");
 const errorContainer = document.getElementById("error-container");
+const informLogin = document.getElementById("inform-login");
 
 const passEmail = ["truongcongly139@gmail.com", "lytc.22it@vku.udn.vn"];
 function showLoading() {
   loginForm.style.display = "none";
   loadingContainer.style.display = "block";
+  informLogin.style.display = "none";
 
   const email = emailInput.value;
-
   if (passEmail.includes(email)) {
     localStorage.setItem("userEmail", email);
     setTimeout(function () {
@@ -20,6 +21,7 @@ function showLoading() {
       loadingContainer.style.display = "none";
       errorContainer.style.display = "block";
       loginForm.style.display = "block";
+      informLogin.style.display = "block";
     }, 2000);
   }
 }
